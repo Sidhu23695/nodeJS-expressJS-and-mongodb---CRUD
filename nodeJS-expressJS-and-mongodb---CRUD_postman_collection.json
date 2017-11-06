@@ -1,0 +1,987 @@
+{
+	"variables": [],
+	"info": {
+		"name": "nem",
+		"_postman_id": "cd9cc704-d382-57b8-4912-660ffb1d9e93",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create user",
+			"request": {
+				"url": "http://localhost:3000/user/create",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"firstName\":\"ugendar\",\n\"lastName\":\"kumar\",\n\"email\":\"ugendar@askpundit.com\",\n\"password\":\"123456\",\n\"officeName\":\"web\",\n\"designation\":\"web developer\",\n\"dateOfBirth\":\"1992-11-26T00:00:00Z\",\n\"country\":\"India\",\n\"city\":\"Chennai\"\n}\n"
+				},
+				"description": ""
+			},
+			"response": [
+				{
+					"id": "e1af8e0d-3e8c-4f11-925a-d648343fb031",
+					"name": "create user",
+					"originalRequest": {
+						"url": "http://localhost:3000/user/create",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"firstName\":\"ugendar\",\n\"lastName\":\"kumar\",\n\"email\":\"ugendar@askpundit.com\",\n\"password\":\"123456\",\n\"officeName\":\"web\",\n\"designation\":\"web developer\",\n\"dateOfBirth\":\"1992-11-26T00:00:00Z\",\n\"country\":\"India\",\n\"city\":\"Chennai\"\n}\n"
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive",
+							"name": "Connection",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"key": "Content-Length",
+							"value": "37",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 06 Nov 2017 11:12:48 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"25-3J/Ea91yzkw8dAe5aWcmS4Rvm1g\"",
+							"name": "ETag",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express",
+							"name": "X-Powered-By",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Tue Jan 19 2038 03:14:07 GMT+0530 (IST)",
+							"httpOnly": true,
+							"domain": "localhost",
+							"path": "/",
+							"secure": false,
+							"value": "s%3A5N5ZXRWkTiu4dSZOWHP-QyAkVcpnL_CD.7hTZZGqENMojLtYayNFmew%2FuKGVVqMhyyPxLbBFPjtk",
+							"key": "connect.sid"
+						}
+					],
+					"responseTime": 1279,
+					"body": "{\"message\":\"User saved successfully\"}"
+				},
+				{
+					"id": "f2516855-d555-4f7c-b03d-d202bc009f8f",
+					"name": "validation errors",
+					"originalRequest": {
+						"url": "http://localhost:3000/user/create",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"firstName\":\"ugendar\",\n\"lastName\":\"kumar\",\n\"email\":\"ugendar@askpundit.com\",\n\"password\":\"123456\",\n\"officeName\":\"web\",\n\"designation\":\"web developer\",\n\"dateOfBirth\":\"1992-11-26T00:00:00Z\",\n\"country\":\"India\",\n\"city\":\"Chennai\"\n}\n"
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive",
+							"name": "Connection",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"key": "Content-Length",
+							"value": "63",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 06 Nov 2017 11:55:11 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3f-2eZnl29HgtJ+w9LY5MiN2rfF8OI\"",
+							"name": "ETag",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express",
+							"name": "X-Powered-By",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Tue Jan 19 2038 03:14:07 GMT+0530 (IST)",
+							"httpOnly": true,
+							"domain": "localhost",
+							"path": "/",
+							"secure": false,
+							"value": "s%3A5N5ZXRWkTiu4dSZOWHP-QyAkVcpnL_CD.7hTZZGqENMojLtYayNFmew%2FuKGVVqMhyyPxLbBFPjtk",
+							"key": "connect.sid"
+						}
+					],
+					"responseTime": 154,
+					"body": "{\"error\":\"User validation failed: email: email must be unique\"}"
+				}
+			]
+		},
+		{
+			"name": "update user info",
+			"request": {
+				"url": "http://localhost:3000/user/update/5a0043af81910c19c5cec693",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"dateOfBirth\":\"1992-11-27T00:00:00Z\",\n\"city\":\"banglore\",\n\"country\":\"ind\"\n}"
+				},
+				"description": ""
+			},
+			"response": [
+				{
+					"id": "cf7b6593-7cd6-4072-bad2-c603534bf272",
+					"name": "user not found",
+					"originalRequest": {
+						"url": "http://localhost:3000/user/update/5a0043af81910c19c5cec693",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"dateOfBirth\":\"1992-11-27T00:00:00Z\",\n\"city\":\"banglore\",\n\"country\":\"ind\"\n}"
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive",
+							"name": "Connection",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"key": "Content-Length",
+							"value": "38",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 06 Nov 2017 11:44:29 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"26-n39eYXGZ5iWpPUIg3Aw40lfxT0c\"",
+							"name": "ETag",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express",
+							"name": "X-Powered-By",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Tue Jan 19 2038 03:14:07 GMT+0530 (IST)",
+							"httpOnly": true,
+							"domain": "localhost",
+							"path": "/",
+							"secure": false,
+							"value": "s%3A5N5ZXRWkTiu4dSZOWHP-QyAkVcpnL_CD.7hTZZGqENMojLtYayNFmew%2FuKGVVqMhyyPxLbBFPjtk",
+							"key": "connect.sid"
+						}
+					],
+					"responseTime": 22,
+					"body": "{\"error\":\"User information not found\"}"
+				},
+				{
+					"id": "19077908-00ff-4426-8554-43ad54e4965e",
+					"name": "user information not found",
+					"originalRequest": {
+						"url": "http://localhost:3000/user/update/5a0043af81910c19c5cec693",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"dateOfBirth\":\"1992-11-27T00:00:00Z\",\n\"city\":\"banglore\",\n\"country\":\"ind\"\n}"
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive",
+							"name": "Connection",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"key": "Content-Length",
+							"value": "38",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 06 Nov 2017 11:45:27 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"26-n39eYXGZ5iWpPUIg3Aw40lfxT0c\"",
+							"name": "ETag",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express",
+							"name": "X-Powered-By",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Tue Jan 19 2038 03:14:07 GMT+0530 (IST)",
+							"httpOnly": true,
+							"domain": "localhost",
+							"path": "/",
+							"secure": false,
+							"value": "s%3A5N5ZXRWkTiu4dSZOWHP-QyAkVcpnL_CD.7hTZZGqENMojLtYayNFmew%2FuKGVVqMhyyPxLbBFPjtk",
+							"key": "connect.sid"
+						}
+					],
+					"responseTime": 45,
+					"body": "{\"error\":\"User information not found\"}"
+				},
+				{
+					"id": "bd88f2a2-e72a-41e1-bc31-def335561649",
+					"name": "user information updated successfully",
+					"originalRequest": {
+						"url": "http://localhost:3000/user/update/5a0043af81910c19c5cec69e",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"dateOfBirth\":\"1992-11-27T00:00:00Z\",\n\"city\":\"banglore\",\n\"country\":\"ind\"\n}"
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive",
+							"name": "Connection",
+							"description": ""
+						},
+						{
+							"key": "Content-Length",
+							"value": "38",
+							"name": "Content-Length",
+							"description": ""
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"name": "Content-Type",
+							"description": ""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 06 Nov 2017 11:45:47 GMT",
+							"name": "Date",
+							"description": ""
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"26-n39eYXGZ5iWpPUIg3Aw40lfxT0c\"",
+							"name": "ETag",
+							"description": ""
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express",
+							"name": "X-Powered-By",
+							"description": ""
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Tue Jan 19 2038 03:14:07 GMT+0530 (IST)",
+							"httpOnly": true,
+							"domain": "localhost",
+							"path": "/",
+							"secure": false,
+							"value": "s%3A5N5ZXRWkTiu4dSZOWHP-QyAkVcpnL_CD.7hTZZGqENMojLtYayNFmew%2FuKGVVqMhyyPxLbBFPjtk",
+							"key": "connect.sid"
+						}
+					],
+					"responseTime": 11,
+					"body": "{\"error\":\"User information not found\"}"
+				}
+			]
+		},
+		{
+			"name": "fetch user info",
+			"request": {
+				"url": "http://localhost:3000/user/fetchInfo/5a0043af81910c19c5cec69e",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": [
+				{
+					"id": "45df5649-3bbc-4033-ac77-62c8806fe4e3",
+					"name": "fetch user info",
+					"originalRequest": {
+						"url": "http://localhost:3000/user/fetchInfo/5a0043af81910c19c5cec69e",
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"description": ""
+							}
+						],
+						"body": {}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive",
+							"name": "Connection",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"key": "Content-Length",
+							"value": "423",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 06 Nov 2017 11:53:10 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1a7-jEIcDq5jSAbI5640Ri7PSwyTINA\"",
+							"name": "ETag",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express",
+							"name": "X-Powered-By",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Tue Jan 19 2038 03:14:07 GMT+0530 (IST)",
+							"httpOnly": true,
+							"domain": "localhost",
+							"path": "/",
+							"secure": false,
+							"value": "s%3A5N5ZXRWkTiu4dSZOWHP-QyAkVcpnL_CD.7hTZZGqENMojLtYayNFmew%2FuKGVVqMhyyPxLbBFPjtk",
+							"key": "connect.sid"
+						}
+					],
+					"responseTime": 94,
+					"body": "{\"data\":{\"_id\":\"5a0043af81910c19c5cec69e\",\"updatedAt\":\"2017-11-06T11:32:53.975Z\",\"createdAt\":\"2017-11-06T11:12:47.805Z\",\"dateOfBirth\":\"1992-11-27T00:00:00.000Z\",\"country\":\"ind\",\"city\":\"banglore\",\"employmentDetails\":{\"_id\":\"5a0043af81910c19c5cec69d\",\"user\":{\"_id\":\"5a0043af81910c19c5cec69c\",\"firstName\":\"ugendar\",\"lastName\":\"kumar\",\"email\":\"ugendar@askpundit.com\"},\"officeName\":\"web\",\"designation\":\"web developer\"},\"__v\":0}}"
+				},
+				{
+					"id": "6131ba04-cf6f-4d7b-9b82-8439e1b85373",
+					"name": "Invalid  id",
+					"originalRequest": {
+						"url": "http://localhost:3000/user/fetchInfo/5a0043af81910c19c5cec69",
+						"method": "GET",
+						"header": [],
+						"body": {}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive",
+							"name": "Connection",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"key": "Content-Length",
+							"value": "31",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 06 Nov 2017 11:54:13 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1f-7A9ZGuSDj5nbjj3gAtsMtQSh7Ls\"",
+							"name": "ETag",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express",
+							"name": "X-Powered-By",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Tue Jan 19 2038 03:14:07 GMT+0530 (IST)",
+							"httpOnly": true,
+							"domain": "localhost",
+							"path": "/",
+							"secure": false,
+							"value": "s%3A5N5ZXRWkTiu4dSZOWHP-QyAkVcpnL_CD.7hTZZGqENMojLtYayNFmew%2FuKGVVqMhyyPxLbBFPjtk",
+							"key": "connect.sid"
+						}
+					],
+					"responseTime": 15,
+					"body": "{\"error\":\"Invalid information\"}"
+				},
+				{
+					"id": "2a11b701-1b4b-422a-b752-4420e9edefb1",
+					"name": "user information not found",
+					"originalRequest": {
+						"url": "http://localhost:3000/user/fetchInfo/5a0043af81910c19c5cec69a",
+						"method": "GET",
+						"header": [],
+						"body": {}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive",
+							"name": "Connection",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"key": "Content-Length",
+							"value": "38",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 06 Nov 2017 11:54:48 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"26-n39eYXGZ5iWpPUIg3Aw40lfxT0c\"",
+							"name": "ETag",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express",
+							"name": "X-Powered-By",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Tue Jan 19 2038 03:14:07 GMT+0530 (IST)",
+							"httpOnly": true,
+							"domain": "localhost",
+							"path": "/",
+							"secure": false,
+							"value": "s%3A5N5ZXRWkTiu4dSZOWHP-QyAkVcpnL_CD.7hTZZGqENMojLtYayNFmew%2FuKGVVqMhyyPxLbBFPjtk",
+							"key": "connect.sid"
+						}
+					],
+					"responseTime": 13,
+					"body": "{\"error\":\"User information not found\"}"
+				}
+			]
+		},
+		{
+			"name": "fetch user info from different collections using promise.all()",
+			"request": {
+				"url": "http://localhost:3000/user/fetchData/5a0043af81910c19c5cec69c",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": [
+				{
+					"id": "c7fcf2ff-9b94-4652-b912-815b0bea7312",
+					"name": "fetch user info from different collections",
+					"originalRequest": {
+						"url": "http://localhost:3000/user/fetchData/5a0043af81910c19c5cec69c",
+						"method": "GET",
+						"header": [],
+						"body": {}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive",
+							"name": "Connection",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"key": "Content-Length",
+							"value": "218",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 06 Nov 2017 15:32:07 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"da-Xai2jW4wvj23QmtCC8dFD+34Ios\"",
+							"name": "ETag",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express",
+							"name": "X-Powered-By",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Tue Jan 19 2038 03:14:07 GMT+0530 (IST)",
+							"httpOnly": true,
+							"domain": "localhost",
+							"path": "/",
+							"secure": false,
+							"value": "s%3A5N5ZXRWkTiu4dSZOWHP-QyAkVcpnL_CD.7hTZZGqENMojLtYayNFmew%2FuKGVVqMhyyPxLbBFPjtk",
+							"key": "connect.sid"
+						}
+					],
+					"responseTime": 56,
+					"body": "{\"data\":{\"user\":{\"_id\":\"5a0043af81910c19c5cec69c\",\"updatedAt\":\"2017-11-06T11:12:47.209Z\",\"createdAt\":\"2017-11-06T11:12:47.209Z\",\"firstName\":\"ugendar\",\"lastName\":\"kumar\",\"email\":\"ugendar@askpundit.com\"},\"totalUsers\":1}}"
+				},
+				{
+					"id": "499d5f19-c1e9-4506-bb36-4178bef16155",
+					"name": "invalid id",
+					"originalRequest": {
+						"url": "http://localhost:3000/user/fetchData/5a0043af81910c19c5cec69",
+						"method": "GET",
+						"header": [],
+						"body": {}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive",
+							"name": "Connection",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"key": "Content-Length",
+							"value": "31",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 06 Nov 2017 15:33:30 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1f-7A9ZGuSDj5nbjj3gAtsMtQSh7Ls\"",
+							"name": "ETag",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express",
+							"name": "X-Powered-By",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Tue Jan 19 2038 03:14:07 GMT+0530 (IST)",
+							"httpOnly": true,
+							"domain": "localhost",
+							"path": "/",
+							"secure": false,
+							"value": "s%3A5N5ZXRWkTiu4dSZOWHP-QyAkVcpnL_CD.7hTZZGqENMojLtYayNFmew%2FuKGVVqMhyyPxLbBFPjtk",
+							"key": "connect.sid"
+						}
+					],
+					"responseTime": 52,
+					"body": "{\"error\":\"Invalid information\"}"
+				}
+			]
+		},
+		{
+			"name": "delete user",
+			"request": {
+				"url": "http://localhost:3000/user/deleteUser/5a0086e84c338b626a952f10",
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": [
+				{
+					"id": "cf5030b5-e5ec-4e38-82e2-dfdf921bbdd9",
+					"name": "delete user",
+					"originalRequest": {
+						"url": "http://localhost:3000/user/deleteUser/5a0086e84c338b626a952f10",
+						"method": "DELETE",
+						"header": [],
+						"body": {}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive",
+							"name": "Connection",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"key": "Content-Length",
+							"value": "39",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 06 Nov 2017 16:00:11 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"27-27o4zzUjhHNmthTJyia4gBCjpos\"",
+							"name": "ETag",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express",
+							"name": "X-Powered-By",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Tue Jan 19 2038 03:14:07 GMT+0530 (IST)",
+							"httpOnly": true,
+							"domain": "localhost",
+							"path": "/",
+							"secure": false,
+							"value": "s%3A5N5ZXRWkTiu4dSZOWHP-QyAkVcpnL_CD.7hTZZGqENMojLtYayNFmew%2FuKGVVqMhyyPxLbBFPjtk",
+							"key": "connect.sid"
+						}
+					],
+					"responseTime": 67,
+					"body": "{\"message\":\"User deleted successfully\"}"
+				},
+				{
+					"id": "e0ae1540-2735-477d-8d14-8dda9dabb97d",
+					"name": "invalid id",
+					"originalRequest": {
+						"url": "http://localhost:3000/user/deleteUser/5a0086e84c338b626a952f1",
+						"method": "DELETE",
+						"header": [],
+						"body": {}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive",
+							"name": "Connection",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"key": "Content-Length",
+							"value": "31",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 06 Nov 2017 16:01:00 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1f-7A9ZGuSDj5nbjj3gAtsMtQSh7Ls\"",
+							"name": "ETag",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express",
+							"name": "X-Powered-By",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Tue Jan 19 2038 03:14:07 GMT+0530 (IST)",
+							"httpOnly": true,
+							"domain": "localhost",
+							"path": "/",
+							"secure": false,
+							"value": "s%3A5N5ZXRWkTiu4dSZOWHP-QyAkVcpnL_CD.7hTZZGqENMojLtYayNFmew%2FuKGVVqMhyyPxLbBFPjtk",
+							"key": "connect.sid"
+						}
+					],
+					"responseTime": 28,
+					"body": "{\"error\":\"Invalid information\"}"
+				},
+				{
+					"id": "8f6abb78-b6f8-44ee-82cf-a8e5f1aa8968",
+					"name": "user not found",
+					"originalRequest": {
+						"url": "http://localhost:3000/user/deleteUser/5a0086e84c338b626a952f10",
+						"method": "DELETE",
+						"header": [],
+						"body": {}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive",
+							"name": "Connection",
+							"description": ""
+						},
+						{
+							"key": "Content-Length",
+							"value": "26",
+							"name": "Content-Length",
+							"description": ""
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"name": "Content-Type",
+							"description": ""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 06 Nov 2017 16:02:56 GMT",
+							"name": "Date",
+							"description": ""
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1a-hq/hT0ORGTkTfyRpVCZ/JB/r8Eg\"",
+							"name": "ETag",
+							"description": ""
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express",
+							"name": "X-Powered-By",
+							"description": ""
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Tue Jan 19 2038 03:14:07 GMT+0530 (IST)",
+							"httpOnly": true,
+							"domain": "localhost",
+							"path": "/",
+							"secure": false,
+							"value": "s%3A5N5ZXRWkTiu4dSZOWHP-QyAkVcpnL_CD.7hTZZGqENMojLtYayNFmew%2FuKGVVqMhyyPxLbBFPjtk",
+							"key": "connect.sid"
+						}
+					],
+					"responseTime": 73,
+					"body": "{\"error\":\"User not found\"}"
+				}
+			]
+		}
+	]
+}

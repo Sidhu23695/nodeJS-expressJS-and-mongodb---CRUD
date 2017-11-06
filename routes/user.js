@@ -88,10 +88,8 @@ userRouter.put('/update/:id', (req, res) => {
     Info.findOne({
         _id: req.params.id
     }).then((doc) => {
-        if (!doc) {
-            return res.status(404).json({
-                error: 'User information not found'
-            });
+        if (doc === null) {
+            return false
         }
         if (req.body.dateOfBirth) doc.dateOfBirth = req.body.dateOfBirth;
         if (req.body.city) doc.city = req.body.city;
@@ -100,7 +98,12 @@ userRouter.put('/update/:id', (req, res) => {
             return true
         })
     }).then((result) => {
-        res.status(200).json({
+        if (!result) {
+            return res.status(404).json({
+                error: 'User information not found'
+            })
+        }
+        return res.status(200).json({
             message: 'User information updated'
         });
     }).catch((err) => {
@@ -121,7 +124,7 @@ userRouter.get('/fetchInfo/:id', (req, res) => {
     }
     Info.findOne({
         _id: req.params.id
-    }).populate({
+    }).select('-__v').populate({
         path: 'employmentDetails',
         select: 'user officeName designation',
         populate: [{
@@ -146,9 +149,75 @@ userRouter.get('/fetchInfo/:id', (req, res) => {
 
 // using promise.all() to query from multiple collections
 
-userRouter.put('/fetchData', (req, res) => {
+userRouter.get('/fetchData/:id', (req, res) => {
+    if (!ObjectID.isValid(req.params.id)) {
+        return res.status(404).json({
+            error: "Invalid information"
+        });
+    }
+    let user = User.findOne({
+        _id: req.params.id
+    }).select('-__v');
+    let totalUsers = User.count({});
 
-})
+    //promise all required queries together
+
+    Promise.all([user, totalUsers]).then((doc) => {
+        // result is provided in the doc value from the promise fulfillment in an array
+        res.status(201).json({
+            data: {
+                user: doc[0],
+                totalUsers: doc[1]
+            }
+        });
+    }).catch((err) => {
+        res.status(500).json({
+            error: 'Internal server error'
+        });
+    });
+});
+
+// delete all user information 
+
+userRouter.delete('/deleteUser/:id', (req, res) => {
+    if (!ObjectID.isValid(req.params.id)) {
+        return res.status(404).json({
+            error: "Invalid information"
+        });
+    }
+    // find user from user collection and remove
+    User.findOneAndRemove({
+        _id: req.params.id
+    }).then((user) => {
+        if (user === null) {
+            return false
+        }
+        // find user employment information from employment collection and remove
+        return Employment.findOneAndRemove({
+            user: req.params.id
+        }).then((userEmp) => {
+            return [user, userEmp]
+        });
+    }).then((result) => {
+        if (result === false) {
+            return res.status(404).json({
+                error: 'User not found'
+            });
+        }
+        // find user information from Info collection and remove    
+        Info.findOneAndRemove({
+            employmentDetails: result[1]._id
+        }).then((userInfo) => {
+            return res.status(200).json({
+                message: 'User deleted successfully'
+            });
+        });
+    }).catch((err) => {
+        res.status(500).json({
+            error: 'Internal server error'
+        });
+    });
+});
 
 
 
