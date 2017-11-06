@@ -1,0 +1,34 @@
+{
+  "name": "node-express-mongo-crud",
+  "version": "1.0.0",
+  "description": "basic crud with node express framework and mongodb",
+  "main": "server.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ugendarkumar/nodeJS-expressJS-mongodb-basic-crud-operations.git"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "mongodb"
+  ],
+  "author": "ugi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ugendarkumar/nodeJS-expressJS-mongodb-basic-crud-operations/issues"
+  },
+  "homepage": "https://github.com/ugendarkumar/nodeJS-expressJS-mongodb-basic-crud-operations#readme",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.17.2",
+    "dotenv": "^4.0.0",
+    "express": "^4.15.4",
+    "lodash": "^4.17.4",
+    "moment": "^2.19.1",
+    "mongoose": "^4.11.8",
+    "mongoose-unique-validator": "^1.0.6"
+  }
+}
