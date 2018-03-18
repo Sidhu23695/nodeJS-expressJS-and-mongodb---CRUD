@@ -4,7 +4,7 @@ const _ = require('lodash'),
     express = require('express'),
     mongoose = require('mongoose'),
     moment = require('moment'),
-    ObjectID = require('mongodb').ObjectID,
+    ObjectID = require('mongoose').Types.ObjectId,
     globalFunctions = require('../controllers/globalFunctions');
 userRouter = express.Router();
 
